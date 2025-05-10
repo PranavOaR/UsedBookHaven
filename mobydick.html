@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moby Dick - Used Book Haven</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset & Typography */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #fdfdfd; color: #333; line-height: 1.6; }
+    header { background: #ff6f61; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+    nav a { color: #fff; font-weight: bold; text-decoration: none; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    
+    /* Product Detail Layout */
+    .product-detail { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .product-image { flex: 1; min-width: 300px; }
+    .product-image img { width: 100%; max-height: 500px; object-fit: cover; border: 1px solid #ddd; border-radius: 8px; }
+    .product-info { flex: 2; }
+    
+    /* Product Typography */
+    .product-info h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .author { font-style: italic; margin-bottom: 1rem; }
+    .price { font-size: 1.5rem; color: #ff6f61; margin-bottom: 1rem; }
+    .rating, .availability { margin-bottom: 1rem; font-size: 1.1rem; }
+    
+    /* Buttons */
+    .buy-buttons { margin: 1.5rem 0; }
+    .buy-buttons a {
+      text-decoration: none; 
+      color: #fff; 
+      background: #ff6f61; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      margin-right: 10px; 
+      transition: background 0.3s;
+    }
+    .buy-buttons a.second { background: #ff3b2e; }
+    .buy-buttons a:hover { background: #e55a54; }
+    
+    /* Section Headings & Description */
+    .product-info h2 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.5rem; }
+    .product-info p.description { font-size: 1rem; margin-bottom: 1rem; }
+    
+    /* Product Details Table */
+    .product-info table { margin: 1rem 0; width: 100%; border-collapse: collapse; }
+    .product-info table, .product-info th, .product-info td { border: 1px solid #ddd; }
+    .product-info th, .product-info td { padding: 10px; text-align: left; }
+    
+    /* Footer */
+    footer { background: #ff6f61; color: #fff; text-align: center; padding: 1rem 0; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container">
+      <h1>Used Book Haven</h1>
+      <nav>
+        <ul>
+          <li><a href="test1.html">Home</a></li>
+          <li><a href="test1.html#shop">Shop</a></li>
+          <li><a href="test1.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Product Detail Section -->
+  <main class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img src="w.jpg" alt="Moby Dick">
+      </div>
+      <div class="product-info">
+        <h1>Moby Dick</h1>
+        <p class="author">By Herman Melville</p>
+        <p class="price">₹160</p>
+        <p class="rating">★★★★☆ (4.2/5)</p>
+        <p class="availability">In Stock.</p>
+        <div class="buy-buttons">
+          <a href="checkout.html?book=Moby+Dick">Buy Now</a>
+          <a href="#" class="second">Add to Cart</a>
+        </div>
+        <h2>Description</h2>
+        <p class="description">
+          An epic seafaring adventure following Captain Ahab's obsessive quest to capture the enigmatic white whale, Moby Dick—exploring themes of obsession, fate, and revenge.
+        </p>
+        <h2>Product Details</h2>
+        <table>
+          <tr><th>Publisher</th><td>Harper &amp; Brothers</td></tr>
+          <tr><th>Publication Date</th><td>October 18, 1851</td></tr>
+          <tr><th>Pages</th><td>635</td></tr>
+          <tr><th>Language</th><td>English</td></tr>
+          <tr><th>ISBN</th><td>978-1503280786</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Used Book Haven. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

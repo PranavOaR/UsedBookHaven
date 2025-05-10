@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - Used Book Haven</title>
+  <style>
+    /* Base styles and resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header, footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    header h1, footer p {
+      margin: 0.5rem 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="number"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #555;
+    }
+    .summary {
+      background: #eee;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Used Book Haven</h1>
+  </header>
+  
+  <div class="container">
+    <a href="test1.html" class="back-link">&larr; Back to Home</a>
+    <h2>Checkout</h2>
+    
+    <!-- Selected Book Summary -->
+    <div class="summary">
+      <p><strong>Selected Book:</strong> <span id="selected-book">None</span></p>
+    </div>
+    
+    <!-- Checkout Form -->
+    <form id="checkout-form" onsubmit="submitOrder(event)">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+      
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+      
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+      
+      <label for="address">Shipping Address</label>
+      <textarea id="address" name="address" placeholder="Street, City, State, Zip" required></textarea>
+      
+      <label for="payment">Payment Method</label>
+      <select id="payment" name="payment" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="credit">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+      
+      <!-- Credit Card Details (display regardless of payment method for demo purposes) -->
+      <label for="card-number">Credit Card Number</label>
+      <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+      
+      <label for="expiry">Expiry Date</label>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+      
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" name="cvv" placeholder="123">
+      
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Used Book Haven. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Retrieve the selected book from the URL query parameter.
+    const params = new URLSearchParams(window.location.search);
+    const book = params.get('book');
+    if(book) {
+      document.getElementById('selected-book').textContent = book;
+    }
+
+    // Simple form submission handler (for demo purposes only)
+    function submitOrder(e) {
+      e.preventDefault();
+      alert('Thank you for your order!\nYour order for "' + 
+            document.getElementById('selected-book').textContent +
+            '" has been received.');
+      // In a real application, you would send the form data to your server here.
+      // For now, we simply reset the form.
+      document.getElementById('checkout-form').reset();
+    }
+  </script>
+</body>
+</html>
